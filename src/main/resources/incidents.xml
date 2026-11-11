@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gestionIncidents>
+
+    <utilisateurs>
+        <utilisateur id="U001">
+            <nom>Amira Ben Ali</nom>
+            <service>Comptabilite</service>
+        </utilisateur>
+
+        <utilisateur id="U002">
+            <nom>Youssef Trabelsi</nom>
+            <service>Ressources humaines</service>
+        </utilisateur>
+
+        <utilisateur id="U003">
+            <nom>Sarra Mansour</nom>
+            <service>Informatique</service>
+        </utilisateur>
+    </utilisateurs>
+
+    <techniciens>
+        <technicien id="T001">
+            <nom>Ahmed Gharbi</nom>
+            <specialite>Materiel</specialite>
+        </technicien>
+
+        <technicien id="T002">
+            <nom>Sami Ben Amor</nom>
+            <specialite>Reseau</specialite>
+        </technicien>
+    </techniciens>
+
+    <incidents>
+
+        <incident id="INC-001">
+            <titre>Panne de connexion Wi-Fi</titre>
+            <description>
+                L'utilisateur ne peut pas acceder a Internet.
+            </description>
+            <categorie>Reseau</categorie>
+            <priorite>Haute</priorite>
+            <statut>En cours</statut>
+            <utilisateurId>U001</utilisateurId>
+            <technicienId>T002</technicienId>
+            <dateCreation>2026-10-21</dateCreation>
+        </incident>
+
+        <incident id="INC-002">
+            <titre>Imprimante en panne</titre>
+            <description>
+                L'imprimante ne produit plus de documents.
+            </description>
+            <categorie>Materiel</categorie>
+            <priorite>Moyenne</priorite>
+            <statut>Ouvert</statut>
+            <utilisateurId>U002</utilisateurId>
+            <technicienId>T001</technicienId>
+            <dateCreation>2026-10-21</dateCreation>
+        </incident>
+
+        <incident id="INC-003">
+            <titre>Probleme de serveur</titre>
+            <description>
+                Un service interne est inaccessible.
+            </description>
+            <categorie>Serveur</categorie>
+            <priorite>Critique</priorite>
+            <statut>Ouvert</statut>
+            <utilisateurId>U003</utilisateurId>
+            <technicienId>T002</technicienId>
+            <dateCreation>2026-10-22</dateCreation>
+        </incident>
+
+        <incident id="INC-004">
+            <titre>Clavier defectueux</titre>
+            <description>
+                Certaines touches du clavier ne fonctionnent plus.
+            </description>
+            <categorie>Materiel</categorie>
+            <priorite>Faible</priorite>
+            <statut>Resolu</statut>
+            <utilisateurId>U001</utilisateurId>
+            <technicienId>T001</technicienId>
+            <dateCreation>2026-10-20</dateCreation>
+        </incident>
+
+    </incidents>
+
+</gestionIncidents>

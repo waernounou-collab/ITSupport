@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Element racine -->
+    <xs:element name="gestionIncidents">
+        <xs:complexType>
+            <xs:sequence>
+
+                <!-- Liste des utilisateurs -->
+                <xs:element name="utilisateurs">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="utilisateur"
+                                        minOccurs="1"
+                                        maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="nom"
+                                                    type="xs:string"/>
+                                        <xs:element name="service"
+                                                    type="xs:string"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="id"
+                                                  type="xs:ID"
+                                                  use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <!-- Liste des techniciens -->
+                <xs:element name="techniciens">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="technicien"
+                                        minOccurs="1"
+                                        maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="nom"
+                                                    type="xs:string"/>
+                                        <xs:element name="specialite"
+                                                    type="xs:string"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="id"
+                                                  type="xs:ID"
+                                                  use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <!-- Liste des incidents -->
+                <xs:element name="incidents">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="incident"
+                                        minOccurs="1"
+                                        maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="titre"
+                                                    type="xs:string"/>
+                                        <xs:element name="description"
+                                                    type="xs:string"/>
+                                        <xs:element name="categorie"
+                                                    type="xs:string"/>
+                                        <xs:element name="priorite">
+                                            <xs:simpleType>
+                                                <xs:restriction
+                                                        base="xs:string">
+                                                    <xs:enumeration
+                                                            value="Faible"/>
+                                                    <xs:enumeration
+                                                            value="Moyenne"/>
+                                                    <xs:enumeration
+                                                            value="Haute"/>
+                                                    <xs:enumeration
+                                                            value="Critique"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="statut">
+                                            <xs:simpleType>
+                                                <xs:restriction
+                                                        base="xs:string">
+                                                    <xs:enumeration
+                                                            value="Ouvert"/>
+                                                    <xs:enumeration
+                                                            value="En cours"/>
+                                                    <xs:enumeration
+                                                            value="Resolu"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="utilisateurId"
+                                                    type="xs:IDREF"/>
+                                        <xs:element name="technicienId"
+                                                    type="xs:IDREF"/>
+                                        <xs:element name="dateCreation"
+                                                    type="xs:date"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="id"
+                                                  type="xs:ID"
+                                                  use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
